@@ -31,7 +31,7 @@ const Rooms = ({ roomCategories }: Props) => {
             laudantium incidunt necessitatibus soluta facere odit.
           </p>
           <div className="discount">
-            <img src="/public/assets/discount.jpg" alt="" />
+            <img src="/assets/discount.jpg" alt="" />
           </div>
         </div>
         {roomCategories.map((category, index) => {

@@ -17,16 +17,10 @@ const Header = () => {
         <div className="div-container">
           <div className="logo">
             <Link className="lg-screen-logo" to={"/"}>
-              <img
-                src="/public/assets/logos/logo-white-background.svg"
-                alt=""
-              />
+              <img src="/assets/logos/logo-white-background.svg" alt="" />
             </Link>
             <Link className="sm-screen-logo" to={"/"}>
-              <img
-                src="/public/assets/logos/logo-orange-background.svg"
-                alt=""
-              />
+              <img src="/assets/logos/logo-orange-background.svg" alt="" />
             </Link>
           </div>
           <div
