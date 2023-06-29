@@ -9,17 +9,17 @@ const SmallerFooter = ({ style }: Props) => {
       <div className={style["text"]}>Copyright © Modebe Stephen Hotel 2023</div>
       <div className={style["icons"]}>
         <Link to={""}>
-          <img src="/src/assets/facebook.svg" alt="" />
+          <img src="/public/assets/facebook.svg" alt="" />
         </Link>
         <Link to={""}>
-          <img src="/src/assets/twitter.svg" alt="" />
+          <img src="/public/assets/twitter.svg" alt="" />
         </Link>
         <Link to={""}>
-          <img src="/src/assets/instagram.svg" alt="" />
+          <img src="/public/assets/instagram.svg" alt="" />
         </Link>
       </div>
       <div className={style["payment-options-container"]}>
-        <img src="/src/assets/payment.png" alt="" />
+        <img src="/public/assets/payment.png" alt="" />
       </div>
     </div>
   );

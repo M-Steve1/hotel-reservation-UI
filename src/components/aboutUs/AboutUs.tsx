@@ -16,7 +16,7 @@ const AboutUs = () => {
       </div>
       <div className="aboutus-container">
         <div className="img-container">
-          <img src="src/assets/hotel-view.jpg" alt="" />
+          <img src="public/assets/hotel-view.jpg" alt="" />
         </div>
         <div className="aboutus-writeup">
           <span className="header">ABOUT STEPHEN HOTEL</span>

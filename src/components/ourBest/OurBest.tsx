@@ -59,7 +59,7 @@ const OurBest = () => {
         </div>
       </div>
       <div className="img-container">
-        <img src="src/assets/ourbest-image.jpg" alt="" />
+        <img src="/public/assets/ourbest-image.jpg" alt="" />
       </div>
     </div>
   );
