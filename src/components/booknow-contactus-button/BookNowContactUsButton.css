@@ -1,0 +1,20 @@
+.booknow-link {
+    margin-right: 30px;
+}
+.booknow-link button, .contactus-link button {
+    border: 1px solid rgba(239, 129, 46);
+    background-color:rgba(239, 129, 46);
+    color: white;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 620px) {
+    .booknow-link, .contactus-link{
+        width: 50%;
+    }
+    .booknow-link button, .contactus-link button {
+        width: 95%;
+    }
+}

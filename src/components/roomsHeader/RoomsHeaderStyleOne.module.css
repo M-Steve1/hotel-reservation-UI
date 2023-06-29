@@ -1,0 +1,38 @@
+.rooms-header {
+    margin-top: -15px;
+    margin-right: -8px;
+    margin-left: -15px;
+    height: 400px;
+}
+.rooms-header img {
+    height: 100%;
+    width: 100%;
+}
+.rooms-header .header {
+    width: 99.3%;
+    position: relative;
+    top: -380px;
+    text-align: center;
+}
+
+.rooms-header .header h2 {
+    margin-top: 60px;
+    color: white;
+}
+.rooms-header .overlay {
+    position: absolute;
+    height: 400px;
+    width: 100%;
+    right: 0px;
+    background-color: black;
+    opacity: 0.45;
+}
+
+@media screen and (max-width: 768px) {
+    .rooms-header {
+        margin-right: 0px;
+    }
+    .rooms-header .header h2 {
+        margin-top: 100px;
+    }
+}

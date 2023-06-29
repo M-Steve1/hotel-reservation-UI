@@ -1,0 +1,61 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #DDDDDD;;
+    padding-top: 30px;
+}
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.input-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.form-container input, .form-container select {
+    font-weight: 600;
+    height: 60px;
+    width: 80%;
+    margin-bottom: 20px;
+    text-align: center;
+    border: none;
+    box-shadow: 1px 1px rgb(196, 192, 192);
+}
+.form-container input::placeholder {
+    font-weight: 600;
+}
+.form-container .form-link {
+    width: 90%;
+    align-self: center;
+    margin-bottom: 20px;
+}
+.form-container .form-button {
+    height: 40px;
+    width: 100%;
+    cursor: pointer;
+    border: 1px solid #EF812E;
+    background-color:#EF812E;
+    color: white;
+}
+.form-container .form-button:hover {
+    background-color: rgb(233, 233, 34);
+}
+
+@media screen and (max-width: 620px) {
+    .form-container form {
+        flex-direction: column;
+    }
+    .form-container input, .form-container select {
+        margin-bottom: 10px !important;
+        margin: auto;
+    }
+    .form-container .form-link button {
+        margin-bottom: 20px;
+    }
+    
+}

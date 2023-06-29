@@ -1,0 +1,51 @@
+.smallfooter-container {
+    padding: 10px;
+    margin-left: -9px;
+    display: flex;
+    background-color: #2a2f3c;
+    height: max-content;
+    margin-bottom: -20px;
+    width: 101.3%;
+    margin-top: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+.smallfooter-container .text {
+    padding-left: 50px;
+    color: #acacac;
+    font-size: 11px;
+}
+.smallfooter-container .icons img{
+    margin-right: 17px;
+    height: 15px;
+    width: 15px;
+    transition: 0.5s ease-in-out;
+}
+.smallfooter-container .icons img:hover {
+    transform: scale(1.2);
+    background-color: white;
+}
+.payment-options-container {
+    margin-right: 50px;
+}
+.payment-options-container img {
+    width: 200px;
+    height: 20px;
+}  
+@media screen and (max-width: 767px) {
+    .smallfooter-container {
+        flex-direction: column;
+        width: 104.8%;
+    }
+    .smallfooter-container .text {
+        padding-left: 0px;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+    .smallfooter-container .icons {
+        margin-bottom: 20px;
+    }
+    .payment-options-container {
+        margin-right: 0px;
+    }
+}

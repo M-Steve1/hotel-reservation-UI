@@ -1,0 +1,44 @@
+nav {
+    border: 1px solid rgba(239, 129, 46);
+    background-color:rgba(239, 129, 46);
+    margin-right: -8px;
+    margin-left: -8px;
+    height: 50px;
+    /* z-index: -2000; */
+}
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    height: 70%;
+}
+
+nav ul li {
+    margin-right: 90px;
+    height: 100%;
+}
+
+nav ul li:hover {
+    border-bottom: 2px solid black
+}
+
+nav ul li .link {
+    text-decoration: none;
+    color: white;
+}
+
+
+@media screen and (max-width: 620px) {
+    nav {
+        height: 100%;
+    }
+    nav ul {
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-around;
+    }
+    nav ul li {
+        width: 80%;
+        height: 20px;
+    }
+}

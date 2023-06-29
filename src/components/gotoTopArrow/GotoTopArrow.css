@@ -1,0 +1,17 @@
+.arrow {
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+    z-index: 2;
+}
+.goto-top-arrow {
+    color: #fff;
+    background: #EF812E;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 30px;
+    border: 1px rgba(239, 129, 46);
+    cursor: pointer;
+}

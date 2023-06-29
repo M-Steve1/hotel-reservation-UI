@@ -1,0 +1,87 @@
+header {
+    margin-top: -15px;
+}
+.logo {
+    cursor: pointer;
+}
+.sm-screen-logo {
+    display: none;
+}
+.div-container {
+    display: flex;
+    justify-content: center;
+}
+.menu-button {
+    display: none;
+}
+
+header .logo img {
+    height: 120px;
+}
+
+@media screen and (max-width: 620px) {
+    .lg-screen-logo {
+        display: none;
+    }
+    .sm-screen-logo {
+        display: inline;
+    }
+    .div-container{
+        flex-direction: row;
+        justify-content: space-between;
+        border: 1px solid #ef8b43;
+        background-color:#ef8b43;
+        margin-right: -8px;
+        margin-left: -8px;
+    }
+    .navigation-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        margin-right: 10px;
+        transition: 0.5s;
+    }
+    .navigation-button .icon1, .icon2, .icon3 {
+        background-color: white;
+        height: 3px;
+        width: 25px;
+        border: 1px solid white;
+        margin-top: 5px;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+   .navigation-button:hover {
+    background-color: whitesmoke;
+   }
+
+   .navigation-button:hover .icon1 {
+    background-color: #ef8b43;
+    transform: rotate(-40deg);
+   }
+
+   .navigation-button:hover .icon2 {
+    display: none;
+   }
+
+   .navigation-button:hover .icon3 {
+    margin-top: 10px;
+    background-color: #ef8b43;
+    transform: rotate(40deg);
+   }
+
+   .nav-link {
+    z-index: 2;
+    --make-it-visible: block;
+    --not-visible: none;
+   }
+
+  .nav-link {
+    height: 393px;
+    position: fixed;
+    right: 0px;
+    opacity: 0.85;
+   }
+}
+

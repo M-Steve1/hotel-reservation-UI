@@ -1,0 +1,115 @@
+.our-rooms-container {
+    margin-top: 30px;
+    height: 1050px;
+}
+.our-rooms-heading-container {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.our-rooms-header {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 3px;
+    margin-top: 0;
+    color: rgba(239, 129, 46);
+    font-weight: 700;
+}
+.room-categories-container {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 95%;
+    height: max-content;
+}
+.room-categories-container .category-container{
+    width: 31%;
+    margin-bottom: 30px;
+    height: 390px;
+}
+.room-categories-container .link {
+    position: relative;
+    display: inline-flex;
+    top: -390px;
+    height: 386px;
+    text-decoration: none;
+    flex-direction: column-reverse;
+}
+
+.room-categories-container .transparent-div {
+    opacity: 0.9;
+    height: 100px;
+    visibility: visible;
+    width: 100%;
+    background-color: rgba(239, 129, 46);
+    text-align: center;
+    transition: 0.6s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+.room-categories-container .transparent-div .header {
+    margin-top: 25px;
+    display: block;
+    font-size: 25px;
+    color: white;
+    font-weight: 700;
+}
+.room-categories-container .transparent-div .price {
+    display: block;
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: 700;
+    color: black;
+}
+.room-categories-container .transparent-div p {
+    margin-top: 25px;
+    color: white;
+    font-size: 14px;
+}
+
+.room-categories-container .transparent-div:hover {
+    height: 386px;
+    justify-content: center;
+}
+
+.room-categories-container .transparent-div button {
+    cursor: pointer;
+    color: white;
+    border: 2px solid white;
+    background-color: rgba(239, 129, 46);
+    width: 130px;
+    height: 40px;
+    margin-top: 30px;
+    align-self: center;
+}
+.room-categories-container .transparent-div button:hover {
+    border: 2px solid black;
+}
+.room-categories-container img {
+    width: 100%;
+    height: 386px;
+}
+
+@media screen and (max-width: 923px)  {
+    .our-rooms-container {
+        height: max-content;
+    }
+    .room-categories-container {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .room-categories-container .category-container {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 550px)  {
+    .room-categories-container {
+        width: 100%;
+    }
+}

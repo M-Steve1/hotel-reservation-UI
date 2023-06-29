@@ -1,0 +1,78 @@
+.room-detail .slide-form-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+.room-detail .slide-form-container .slide-container {
+    width: 62%;
+    margin-right: 30px;
+}
+.room-detail .slide-form-container .slide-container img {
+    width: 100%;
+   height: 550px;
+}
+.room-detail .slide-form-container .form-container {
+    width: 29%;
+    display: flex;
+    flex-direction: column;
+}
+.room-detail .slide-form-container .form-container h2,
+.room-detail .slide-form-container .form-container p {
+    text-align: center;
+    font-weight: 800;
+}
+.description-and-amenities-container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.description-and-amenities {
+    border-bottom: 1px solid #DDDDDD;
+    width: 100%;
+    text-align: center;
+}
+.description-and-amenities-container .description {
+    width: 80%;
+    margin-top: 20px;
+}
+.description-and-amenities-container .amenities {
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    text-align: center;
+}
+.description-and-amenities-container .amenities span {
+    margin-right: 200px;
+}
+.description-and-amenities-container .amenities .fa-check{
+    width: 8px;
+    height: 8px;
+    margin-right: 7px;
+}
+
+@media screen and (max-width:1000px) {
+    .room-detail .slide-form-container {
+        flex-direction:column-reverse;
+        align-items: center;
+    }
+    .room-detail .slide-form-container .form-container {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .room-detail .slide-form-container .slide-container {
+        width: 90%;
+        margin: auto;
+    }
+    .description-and-amenities-container .amenities {
+        flex-direction: column;
+        text-align: start;
+        padding-left: 10%;
+    }
+    .description-and-amenities-container .amenities span {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        font-weight: 550;
+    }
+}

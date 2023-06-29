@@ -1,0 +1,45 @@
+.aboutus-container {
+    display: flex;
+    width: 95%;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.aboutus-container .img-container {
+    margin-right: 30px;
+    width: 46%;
+}
+.aboutus-container img {
+    height: 518px;
+    width: 100%;
+}
+.aboutus-container .aboutus-writeup {
+    width: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.aboutus-writeup .header {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 3px;
+    color: rgba(239, 129, 46);
+    font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+    .aboutus-container {
+        flex-direction: column;
+        align-items: center;
+        width: 97%;
+    }
+    .aboutus-container .img-container {
+        width: 100%;
+        margin: auto;
+    }
+    .aboutus-container .aboutus-writeup {
+        margin-top: 50px;
+        width: 70%;
+    }
+}

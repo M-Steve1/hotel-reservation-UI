@@ -1,0 +1,222 @@
+.check-availability-container {
+    margin-top: 20px;
+}
+.available-rooms-and-cart-container {
+    height: max-content;
+    display: flex;
+    width: 100%;
+    margin-top: 30px !important;
+    justify-content: space-between;
+    margin: auto;
+}
+.available-rooms-container {
+    width: 67%;
+}
+.available-rooms-container .room-container {
+    display: flex;
+    width: 100%;
+    border-top: 1px solid #DDD;
+}
+.available-rooms-container h2 {
+    margin-left: 20px;
+    font-size: 23px;
+}
+.room-container .image-container {
+    width: 350px;
+    height: 250px;
+}
+.room-container .image-container img {
+    width: 100%;
+    height: 100%;
+}
+.room-container .room-price-container span{
+    display: block;
+}
+.room-container .room-price-container .price {
+    font-size: 22px;
+}
+.room-container .room-deal-container {
+    margin-right: 20px;
+}
+.room-container .room-deal-container .heading {
+    margin-left: 30px;
+    font-size: 17px;
+}
+.room-container .booknow-and-room-number-container {
+    margin-top: 45px;
+    margin-left: 25px;
+}
+.room-container .booknow-and-room-number-container span{
+    display: block;
+}
+.room-container .booknow-and-room-number-container button {
+    width: 150px;
+    height: 40px;
+    color: white;
+    background-color: rgba(239, 129, 46);
+    border: rgba(239, 129, 46);
+    cursor: pointer;
+}
+.room-container .heading {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.room-container .room-deal-container ul{
+    list-style-type: none;
+    font-size: 12px;
+}
+.room-container .room-deal-container ul .fa-check {
+    height: 10px;
+    width: 10px;
+    margin-right: 10px;
+}
+.available-rooms-and-cart-container .cart {
+    width: 30%;
+    height: max-content;
+    border-bottom: none;
+    font-size: 12px;
+}
+.available-rooms-and-cart-container .empty-cart-message{
+    text-align: center;
+    border: 1px solid #DDDD;
+    width: 30%;
+    height: 100px;
+    padding-top: 35px;
+    font-size: larger;
+    font-weight: 800;
+}
+.cart .booking-date-container {
+    padding-left:5px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #DDDD;
+}
+.cart .booking-date-container .day {
+    font-size: 40px;
+}
+.cart .booking-date-container .weekday-and-month {
+    width: 90px;
+    margin-top: 5px;
+    margin-left: 15px;
+    font-size: 15px;
+}
+.cart .booked-room-container {
+    display: flex;
+    flex-direction: column;
+}
+.cart .booked-room-container .booked-room {
+    display: flex;
+    justify-content: space-between;
+    padding-left:10px;
+    padding-right:10px;
+    border: 1px solid #DDDD;
+}
+.cart .total {
+    display: flex;
+    justify-content: space-between;
+}
+.booked-room-container button {
+    background-color: rgba(239, 129, 46);
+    border: rgba(239, 129, 46);
+    color: white;
+    cursor: pointer;
+}
+.cart .total {
+    background-color: #f8f9fa;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border: 1px solid #DDDD;
+}
+.cart .check-out-button {
+    margin-top: 20px;
+    height: 40px;
+    width: 130px;
+    color: white;
+    background-color: rgba(239, 129, 46);
+    border: rgba(239, 129, 46);
+}
+
+@media screen and (max-width: 1024px) {
+    .available-rooms-and-cart-container {
+        flex-direction: column-reverse;
+    }
+    .available-rooms-and-cart-container .available-rooms-container {
+        width: 100%;
+        margin: auto;
+        margin-top: 30px !important;
+    }
+    .available-rooms-container .room-container {
+        justify-content: space-between;
+    }
+    .available-rooms-and-cart-container .cart {
+        width: 100%;
+        margin: auto;
+    }
+    .available-rooms-and-cart-container .empty-cart-message {
+        margin: auto;
+        width: 100%;
+    }
+    .cart .booking-date-container {
+        justify-content: space-between;
+    }
+    .cart .booked-room-container {
+        font-size: large;
+    }
+    .cart .total {
+        font-size: large;
+    }
+    .booked-room-container button {
+        height: 35px;
+        font-size: large;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .room-container .room-deal-container {
+        margin-right: 10px;
+    }
+    .room-container .room-deal-container .heading {
+        margin-left: 5px;
+    }
+    .room-container .room-deal-container li {
+        margin-left: -30px;
+    }
+    .room-container .room-price-container {
+        margin-right: 5px;
+    }
+}
+
+@media screen and (max-width: 570px) { 
+    .available-rooms-container .room-container {
+        flex-direction: column;
+        width: 100%;
+    }
+    .room-container .image-container {
+        width: 100%;
+        height: 350px;
+        margin-bottom: 20px;
+    }
+    .room-container .room-price-container {
+        margin-left: 5px;
+    }
+    .room-container .booknow-and-room-number-container {
+        margin-left: 5px;
+    }
+    .cart .booking-date-container .day {
+        font-size: 27px;
+    }
+    .cart .booking-date-container .weekday-and-month {
+        margin-left: 5px;
+        font-size: 10px;
+        width: min-content;
+    }
+    .cart .booked-room-container {
+        font-size: small;
+    }
+    .cart .total {
+        font-size: medium;
+    }
+}

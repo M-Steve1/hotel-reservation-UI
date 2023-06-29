@@ -1,0 +1,69 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    margin-right: -8px;
+    margin-left: -8px;
+    height: max-content;
+    align-items: center;
+    background-color: #070d18;
+    opacity: 0.91;
+    margin-bottom: -15px;
+}
+footer .icon-container {
+    border: 2px solid rgba(239, 129, 46);
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    margin-top: 80px;
+}
+.fa-envelope {
+    color:rgba(239, 129, 46) ;
+}
+footer .heading {
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+}
+footer p {
+    color: white;
+    margin-bottom: 30px;
+    text-align: center;
+}
+footer input {
+    width: 400px;
+    height: 50px;
+    background-color: #070d18;
+    border:  1px solid white;
+    color: white;
+}
+footer input::placeholder {
+    padding-left: 15px;
+    color: white;
+}
+footer button {
+    width: 130px;
+    height: 50px;
+    background-color: #e38b4d;
+    border: 2px solid orange;
+    cursor: pointer;
+    color: white;
+}
+footer button:hover {
+    background-color: rgb(233, 233, 34);
+}
+.footer-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (max-width: 424px){
+    footer input {
+        width: 100%;
+    }
+}
