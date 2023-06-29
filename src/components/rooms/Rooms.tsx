@@ -15,7 +15,7 @@ interface Props {
 const Rooms = ({ roomCategories }: Props) => {
   return (
     <>
-      <RoomsHeader style={style} url="/src/assets/hotel-view.jpg">
+      <RoomsHeader style={style} url="/assets/hotel-view.jpg">
         STEPHEN ACCOMMODATION
       </RoomsHeader>
       <div className="rooms-container">
