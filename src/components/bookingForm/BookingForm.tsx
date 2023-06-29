@@ -31,10 +31,10 @@ const BookingForm = ({ style, roomType }: Props) => {
 
   const handleDateValidation = () => {
     const interval = validateDate(formData.checkIn, formData.checkOut);
-    if (interval < 0) {
+    if (interval <= 0) {
       alert("Please Pick a Valid Check Out Date");
       setDisabled(true);
-    } else if (interval >= 0) setDisabled(false);
+    } else if (interval > 0) setDisabled(false);
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
