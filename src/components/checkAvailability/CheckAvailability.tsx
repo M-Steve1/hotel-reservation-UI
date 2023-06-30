@@ -14,6 +14,7 @@ import { calculateNumberOfDays } from "../../utils/calculateDate";
 import { formatDate } from "../../utils/formatDate";
 import { addToCart, removeFromCart } from "../../utils/cart";
 import GotoTopArrow from "../gotoTopArrow/GotoTopArrow";
+import LoaderComp from "../loadercomp/LoaderComp";
 
 interface Props {
   roomCategories: Category[];
@@ -103,135 +104,148 @@ const CheckAvailability = ({ roomCategories }: Props) => {
         <BookingForm style={style} roomType={roomType}></BookingForm>
         <div className="available-rooms-and-cart-container">
           <div className="available-rooms-container">
-            {roomCategories.map((category, index) => {
-              numberOfAvailableRooms.length <= 0 && index === 0
-                ? getNumberOfRoomsInCategory()
-                : null;
-              return (
-                <div
-                  key={category.roomType}
-                  style={{ border: "1px solid #DDDD", marginBottom: "30px" }}
-                >
-                  <h2>{category.roomType}</h2>
+            {roomCategories.length !== 0 ? (
+              roomCategories.map((category, index) => {
+                numberOfAvailableRooms.length <= 0 && index === 0
+                  ? getNumberOfRoomsInCategory()
+                  : null;
+                return (
                   <div
-                    onScroll={() => console.log("good")}
-                    className="room-container"
+                    key={category.roomType}
+                    style={{ border: "1px solid #DDDD", marginBottom: "30px" }}
                   >
-                    <div className="image-container">
-                      <img src={category.urls[0]} alt="" />
-                    </div>
+                    <h2>{category.roomType}</h2>
+                    <div
+                      onScroll={() => console.log("good")}
+                      className="room-container"
+                    >
+                      <div className="image-container">
+                        <img src={category.urls[0]} alt="" />
+                      </div>
 
-                    <div className="room-deal-container">
-                      <span className="heading">Choose your deal</span>
-                      <ul>
-                        <p>
-                          <b>Inclusions</b>
-                        </p>
-                        <li>
-                          <span className="icon">
-                            <FontAwesomeIcon
-                              className="fa-check"
-                              icon={faCheck}
-                            />
-                            Breakfast included
-                          </span>
-                        </li>
-                        <li>
-                          <span className="icon">
-                            <FontAwesomeIcon
-                              className="fa-check"
-                              icon={faCheck}
-                            />
-                            Breakfast included
-                          </span>
-                        </li>
-                        <li>
-                          <span className="icon">
-                            <FontAwesomeIcon
-                              className="fa-check"
-                              icon={faCheck}
-                            />
-                            Breakfast included
-                          </span>
-                        </li>
-                      </ul>
-                      <ul>
-                        <p>
-                          <b>Policies</b>
-                        </p>
-                        <li>
-                          <span className="icon">
-                            <FontAwesomeIcon
-                              className="fa-check"
-                              icon={faCheck}
-                            />
-                            Breakfast included
-                          </span>
-                        </li>
-                        <li>
-                          <span className="icon">
-                            <FontAwesomeIcon
-                              className="fa-check"
-                              icon={faCheck}
-                            />
-                            Breakfast included
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="room-price-container">
-                      <span className="heading">Price</span>
-                      <span className="price">
-                        <i>
-                          <b>₦{numberWithCommas(category.price)}</b>
-                        </i>
-                      </span>
-                      <span>
-                        <i>
-                          <b style={{ fontSize: "14px" }}>Cost for 1 night</b>
-                        </i>
-                      </span>
-                    </div>
-                    <div className="booknow-and-room-number-container">
-                      <button
-                        onClick={() => {
-                          addToCart(category, category.roomType, setCart),
-                            getNumberOfRoomsInCategory();
-                        }}
-                      >
-                        BOOK NOW
-                      </button>
-                      <span style={{ fontSize: "small" }}>
-                        <i
-                          style={{
-                            display:
-                              numberOfAvailableRooms.length === 0
-                                ? "inline"
-                                : "none",
+                      <div className="room-deal-container">
+                        <span className="heading">Choose your deal</span>
+                        <ul>
+                          <p>
+                            <b>Inclusions</b>
+                          </p>
+                          <li>
+                            <span className="icon">
+                              <FontAwesomeIcon
+                                className="fa-check"
+                                icon={faCheck}
+                              />
+                              Breakfast included
+                            </span>
+                          </li>
+                          <li>
+                            <span className="icon">
+                              <FontAwesomeIcon
+                                className="fa-check"
+                                icon={faCheck}
+                              />
+                              Breakfast included
+                            </span>
+                          </li>
+                          <li>
+                            <span className="icon">
+                              <FontAwesomeIcon
+                                className="fa-check"
+                                icon={faCheck}
+                              />
+                              Breakfast included
+                            </span>
+                          </li>
+                        </ul>
+                        <ul>
+                          <p>
+                            <b>Policies</b>
+                          </p>
+                          <li>
+                            <span className="icon">
+                              <FontAwesomeIcon
+                                className="fa-check"
+                                icon={faCheck}
+                              />
+                              Breakfast included
+                            </span>
+                          </li>
+                          <li>
+                            <span className="icon">
+                              <FontAwesomeIcon
+                                className="fa-check"
+                                icon={faCheck}
+                              />
+                              Breakfast included
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="room-price-container">
+                        <span className="heading">Price</span>
+                        <span className="price">
+                          <i>
+                            <b>₦{numberWithCommas(category.price)}</b>
+                          </i>
+                        </span>
+                        <span>
+                          <i>
+                            <b style={{ fontSize: "14px" }}>Cost for 1 night</b>
+                          </i>
+                        </span>
+                      </div>
+                      <div className="booknow-and-room-number-container">
+                        <button
+                          onClick={() => {
+                            addToCart(category, category.roomType, setCart),
+                              getNumberOfRoomsInCategory();
                           }}
                         >
-                          Loading....
-                        </i>
-                        <i
-                          onClick={() => getNumberOfRoomsInCategory()}
-                          style={{
-                            cursor: "pointer",
-                            display:
-                              numberOfAvailableRooms.length !== 0
-                                ? "inline"
-                                : "none",
-                          }}
-                        >
-                          {numberOfAvailableRooms[index] === 0
-                            ? "click here (available rooms)"
-                            : `${numberOfAvailableRooms[index]} of rooms left`}
-                        </i>
-                      </span>
+                          BOOK NOW
+                        </button>
+                        <span style={{ fontSize: "small" }}>
+                          <i
+                            style={{
+                              display:
+                                numberOfAvailableRooms.length === 0
+                                  ? "inline"
+                                  : "none",
+                            }}
+                          >
+                            Loading....
+                          </i>
+                          <i
+                            onClick={() => getNumberOfRoomsInCategory()}
+                            style={{
+                              cursor: "pointer",
+                              display:
+                                numberOfAvailableRooms.length !== 0
+                                  ? "inline"
+                                  : "none",
+                            }}
+                          >
+                            {numberOfAvailableRooms[index] === 0
+                              ? "click here (available rooms)"
+                              : `${numberOfAvailableRooms[index]} of rooms left`}
+                          </i>
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })
+            ) : (
+              <div
+                style={{
+                  height: "120px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <LoaderComp />
+              </div>
+            )}
           </div>
           <div
             style={{

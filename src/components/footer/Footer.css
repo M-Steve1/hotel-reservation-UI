@@ -63,6 +63,7 @@ footer button:hover {
 }
 
 @media screen and (max-width: 424px){
+  
     footer input {
         width: 100%;
     }

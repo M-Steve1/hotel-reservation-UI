@@ -19,7 +19,12 @@ interface Props {
 }
 const Body = ({ roomCategories }: Props) => {
   return (
-    <div>
+    <div
+      style={{
+        width: "100%",
+        overflowWrap: "break-word",
+      }}
+    >
       <Header />
       <Carousel className="carousel-container">
         <Paper className="slide animate__animated animate__fadeInRightBig">

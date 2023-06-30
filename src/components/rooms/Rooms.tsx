@@ -7,6 +7,7 @@ import GotoTopArrow from "../gotoTopArrow/GotoTopArrow";
 import SmallerFooter from "../smallerFooter/SmallerFooter";
 import smallFooterStyle from "../smallerFooter/SmallFooter.module.css";
 import { numberWithCommas } from "../../utils/numberWithComma";
+import LoaderComp from "../loadercomp/LoaderComp";
 
 interface Props {
   roomCategories: Room[];
@@ -34,48 +35,65 @@ const Rooms = ({ roomCategories }: Props) => {
             <img src="/assets/discount.jpg" alt="" />
           </div>
         </div>
-        {roomCategories.map((category, index) => {
-          return (
-            <div
-              key={category.roomType}
-              className="room"
-              style={{ flexDirection: index % 2 !== 0 ? "row-reverse" : "row" }}
-            >
-              <div className="room-image">
-                <Link className="link" to={`/room_type/${category.roomType}`}>
-                  <img src={category.urls[0]} alt="" />
-                </Link>
-              </div>
-              <div className="room-details">
-                <p>
+        {roomCategories.length !== 0 ? (
+          roomCategories.map((category, index) => {
+            return (
+              <div
+                key={category.roomType}
+                className="room"
+                style={{
+                  flexDirection: index % 2 !== 0 ? "row-reverse" : "row",
+                }}
+              >
+                <div className="room-image">
+                  <Link className="link" to={`/room_type/${category.roomType}`}>
+                    <img src={category.urls[0]} alt="" />
+                  </Link>
+                </div>
+                <div className="room-details">
+                  <p>
+                    <Link
+                      style={{ textDecoration: "none", cursor: "pointer" }}
+                      to={`/room_type/${category.roomType}`}
+                    >
+                      <span>{category.roomType.replace("_", " ")}</span>
+                    </Link>
+                    START FROM ₦{numberWithCommas(category.price)} PER DAY{" "}
+                    <br />
+                    <br /> Standard Furnished Room, Fully Air Conditioned,
+                    Energy Saver Room Key, Toilet, Orthopedic Mattress, Chairs,
+                    LED TV, Reading Lights, Accessories, Mini Bar, 24hours Room
+                    Service, Telephone & Windows Tablet Request Devices, Smoke
+                    Detector, Water Sprinkler, Fire Alarm
+                  </p>
+                  <ul>
+                    <li>Max: 4 Person(s)</li>
+                    <li>Size: 35 m2 / 376 ft2</li>
+                    <li>Bed: King-size</li>
+                  </ul>
                   <Link
-                    style={{ textDecoration: "none", cursor: "pointer" }}
+                    className="button-link"
                     to={`/room_type/${category.roomType}`}
                   >
-                    <span>{category.roomType.replace("_", " ")}</span>
+                    <button>VIEW DETAILS</button>
                   </Link>
-                  START FROM ₦{numberWithCommas(category.price)} PER DAY <br />
-                  <br /> Standard Furnished Room, Fully Air Conditioned, Energy
-                  Saver Room Key, Toilet, Orthopedic Mattress, Chairs, LED TV,
-                  Reading Lights, Accessories, Mini Bar, 24hours Room Service,
-                  Telephone & Windows Tablet Request Devices, Smoke Detector,
-                  Water Sprinkler, Fire Alarm
-                </p>
-                <ul>
-                  <li>Max: 4 Person(s)</li>
-                  <li>Size: 35 m2 / 376 ft2</li>
-                  <li>Bed: King-size</li>
-                </ul>
-                <Link
-                  className="button-link"
-                  to={`/room_type/${category.roomType}`}
-                >
-                  <button>VIEW DETAILS</button>
-                </Link>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })
+        ) : (
+          <div
+            style={{
+              height: "150px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginBottom: "150px",
+            }}
+          >
+            <LoaderComp />
+          </div>
+        )}
       </div>
       <GotoTopArrow />
       <SmallerFooter style={smallFooterStyle} />

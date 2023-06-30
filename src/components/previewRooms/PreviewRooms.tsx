@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./PreviewRooms.css";
 import Category from "../../models/Category";
 import { numberWithCommas } from "../../utils/numberWithComma";
+import LoaderComp from "../loadercomp/LoaderComp";
 
 interface Props {
   roomCategories: Category[];
@@ -18,35 +19,48 @@ const PreviewRooms = ({ roomCategories }: Props) => {
         </p>
       </div>
       <div className="room-categories-container">
-        {roomCategories.map((category, index) => {
-          if (index <= 5) {
-            return (
-              <div
-                key={category.roomType}
-                style={{
-                  marginRight: index === 2 || index === 5 ? "0px" : "30px",
-                }}
-                className="category-container"
-              >
-                <img src={category.urls[0]} alt="" />
-                <Link className="link" to={`/room_type/${category.roomType}`}>
-                  <div className="transparent-div">
-                    <span className="header">{category.roomType}</span>
-                    <span className="price">
-                      START FROM ₦{numberWithCommas(category.price)} PER DAY
-                    </span>
-                    <p>
-                      Standard Furnished Room, Fully Air Conditioned, Energy
-                      Saver Room Key, Toilet, Orthopedic Mattress, Chairs, LED
-                      TV, Reading Lights, Accessories,
-                    </p>
-                    <button>VIEW DETAILS</button>
-                  </div>
-                </Link>
-              </div>
-            );
-          }
-        })}
+        {roomCategories.length !== 0 ? (
+          roomCategories.map((category, index) => {
+            if (index <= 5) {
+              return (
+                <div
+                  key={category.roomType}
+                  style={{
+                    marginRight: index === 2 || index === 5 ? "0px" : "30px",
+                  }}
+                  className="category-container"
+                >
+                  <img src={category.urls[0]} alt="" />
+                  <Link className="link" to={`/room_type/${category.roomType}`}>
+                    <div className="transparent-div">
+                      <span className="header">{category.roomType}</span>
+                      <span className="price">
+                        START FROM ₦{numberWithCommas(category.price)} PER DAY
+                      </span>
+                      <p>
+                        Standard Furnished Room, Fully Air Conditioned, Energy
+                        Saver Room Key, Toilet, Orthopedic Mattress, Chairs, LED
+                        TV, Reading Lights, Accessories,
+                      </p>
+                      <button>VIEW DETAILS</button>
+                    </div>
+                  </Link>
+                </div>
+              );
+            }
+          })
+        ) : (
+          <div
+            style={{
+              height: "400px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <LoaderComp />
+          </div>
+        )}
       </div>
     </div>
   );

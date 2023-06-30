@@ -15,6 +15,7 @@ import { useParams } from "react-router-dom";
 import api from "../../api/apiConfig";
 import Category from "../../models/Category";
 import { numberWithCommas } from "../../utils/numberWithComma";
+import LoaderComp from "../loadercomp/LoaderComp";
 
 const RoomDetail = () => {
   const theCategory: Category = {
@@ -51,15 +52,29 @@ const RoomDetail = () => {
       </RoomsHeader>
       <div className="room-detail">
         <div className="slide-form-container">
-          <Carousel className="slide-container">
-            {category.urls.map((url) => {
-              return (
-                <Paper style={{ boxShadow: "none" }} key={category.roomType}>
-                  <img src={url} alt="" />
-                </Paper>
-              );
-            })}
-          </Carousel>
+          {category.price !== 0 || category.roomType !== "" ? (
+            <Carousel className="slide-container">
+              {category.urls.map((url) => {
+                return (
+                  <Paper style={{ boxShadow: "none" }} key={category.roomType}>
+                    <img src={url} alt="" />
+                  </Paper>
+                );
+              })}
+            </Carousel>
+          ) : (
+            <div
+              style={{
+                height: "450px",
+                width: "50%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <LoaderComp />
+            </div>
+          )}
           <div className="form-container">
             <div style={{ backgroundColor: "#EF812E" }}>
               <h2>{category.roomType}</h2>

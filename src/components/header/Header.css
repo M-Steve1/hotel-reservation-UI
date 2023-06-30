@@ -20,6 +20,7 @@ header .logo img {
 }
 
 @media screen and (max-width: 620px) {
+   
     .lg-screen-logo {
         display: none;
     }
@@ -84,4 +85,3 @@ header .logo img {
     opacity: 0.85;
    }
 }
-
