@@ -4,10 +4,10 @@ import "./BookNowContactUsButton.css";
 const BookNowContactUsButton = () => {
   return (
     <>
-      <Link className="booknow-link" to={"/room"}>
+      <Link className="booknow-link" to={"/stephen-accommodation"}>
         <button>BOOK NOW!</button>
       </Link>
-      <Link className="contactus-link" to={"/contact"}>
+      <Link className="contactus-link" to={"/about-us"}>
         <button>CONTACT US</button>
       </Link>
     </>
